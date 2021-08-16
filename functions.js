@@ -17,8 +17,14 @@ module.exports.loadCommands = async (client) => {
     (async () => {
         try {
             console.log('Started refreshing application (/) commands.');
+            client.guilds.cache.forEach(async (guild) => {
+                await rest.put(
+                    Routes.applicationGuildCommands(client.user.id, guild.id),
+                    { body: commands },
+                );
+            });
             await rest.put(
-                Routes.applicationCommands(client.user.id),
+                Routes.applicationCommands(client.user.id), 
                 { body: commands },
             );
             console.log('Successfully reloaded application (/) commands.');
