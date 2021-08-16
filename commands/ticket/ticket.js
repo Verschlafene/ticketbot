@@ -2,8 +2,8 @@ const Ticket = require('../../schemas/ticket');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 module.exports = {
     data: new SlashCommandBuilder()
-        .setName('setup')
-        .setDescription('Setup Befehl für das Ticketsystem.')
+        .setName('ticket')
+        .setDescription('Befehl für das Ticketsystem.')
         .addSubcommand(subcommand =>
             subcommand
                 .setName('reset')
