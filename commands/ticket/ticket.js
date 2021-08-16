@@ -1,6 +1,7 @@
 const Ticket = require('../../schemas/ticket');
 const { SlashCommandBuilder } = require('@discordjs/builders');
 module.exports = {
+    permissions: ['MANAGE_CHANNELS'],
     data: new SlashCommandBuilder()
         .setName('ticket')
         .setDescription('Befehl für das Ticketsystem.')
