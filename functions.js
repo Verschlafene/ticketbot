@@ -18,7 +18,7 @@ module.exports.loadCommands = async (client) => {
         try {
             console.log('Started refreshing application (/) commands.');
             await rest.put(
-                Routes.applicationGuildCommands('876552763042062407', '741742952979890276'),
+                Routes.applicationCommands('876552763042062407'),
                 { body: commands },
             );
             console.log('Successfully reloaded application (/) commands.');
